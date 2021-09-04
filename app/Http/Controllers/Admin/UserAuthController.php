@@ -53,7 +53,7 @@ class UserAuthController extends Controller
         if($user){
             if(Hash::check($request->password,$user->password)){
                 $request->session()->put('LoggedUser', $user->id);
-                return redirect('dashboard');
+                return redirect('/');
             }else{
                 return back()->with('fail','Email and Password doesnt match.');
             }

@@ -17,14 +17,14 @@ use  App\Http\Controllers\Admin\OrderController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::group(["middleware"=>["isLogged"]],function (){
     Route::get("/logout",[UserAuthController::class,"logout"]);
 
-    Route::get('/dashboard',[UserAuthController::class,'dashboard']);
+    Route::get('/',[UserAuthController::class,'dashboard']);
 
 
     Route::get('/services',[ServiceController::class,'services']);
